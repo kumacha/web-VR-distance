@@ -7,59 +7,59 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
   <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
-  <script src="html2canvas.min.js"></script>
+  <script src="./js/html2canvas.min.js"></script>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
+  <span class="blinking">
+    <div id="loader">
 
-  <div id="loader">
-
-    <p>loading...</p>
-  </div>
-  <div id="target1" class="target">
-    <img src="imgs/face.png" alt="A-Frame">
-    <div class="cf">
-      <h3>警告</h3>
+      <p>loading...</p>
     </div>
-    <p class="detail">警告</p>
-  </div>
-  <div id="target2" class="target">
-    <img v-if="url" v-bind:src="url" alt="A-Frame">
-    <div class="cf">
+    <div id="target1" class="target">
+      <img src="imgs/face.png" alt="A-Frame">
+      <div class="cf">
+        <h3>警告</h3>
+      </div>
+      <p class="detail">警告</p>
     </div>
-    <p class="detail">緊急事態宣言発令中</p>
-  </div>
-  <div id="target3" class="target">
-    <img src="imgs/gotop.png" alt="A-Frame">
-    <div class="cf">
-      <h3>TOPへ</h3>
+    <div id="target2" class="target">
+      <img v-if="url" v-bind:src="url" alt="A-Frame">
+      <div class="cf">
+      </div>
+      <p class="detail">緊急事態宣言発令中</p>
     </div>
-    <p class="detail">緊急事態宣言発令中 </p>
-  </div>
-  <div id="target4" class="target">
-    <img src="imgs/orc.png" alt="A-Frame">
-    <div class="cf">
-      <h3>OCR分析</h3>
+    <div id="target3" class="target">
+      <img src="imgs/gotop.png" alt="A-Frame">
+      <div class="cf">
+        <h3>TOPへ</h3>
+      </div>
+      <p class="detail">緊急事態宣言発令中 </p>
     </div>
-    <p class="detail">ソーシャルディスタンスを保ってください。</p>
-  </div>
-  <div id="target5" class="target">
-    <img src="imgs/dog.jpg" alt="A-Frame">
-    <div class="cf">
-      <h3>犬画像ページ</h3>
+    <div id="target4" class="target">
+      <img src="imgs/orc.png" alt="A-Frame">
+      <div class="cf">
+        <h3>OCR分析</h3>
+      </div>
+      <p class="detail">ソーシャルディスタンスを保ってください。</p>
     </div>
-    <p class="detail">３密ぅ～～！！！</p>
-  </div>
-  <div id="target6" class="target">
-    <img src="imgs/jaga.png" alt="A-Frame">
-    <div class="cf">
-      <h3>予備</h3>
+    <div id="target5" class="target">
+      <img src="imgs/dog.jpg" alt="A-Frame">
+      <div class="cf">
+        <h3>犬画像ページ</h3>
+      </div>
+      <p class="detail">３密ぅ～～！！！</p>
     </div>
-    <p class="detail">ソーシャルディスタンスを保ってください。</p>
-  </div>
-
+    <div id="target6" class="target">
+      <img src="imgs/jaga.png" alt="A-Frame">
+      <div class="cf">
+        <h3>予備</h3>
+      </div>
+      <p class="detail">ソーシャルディスタンスを保ってください。</p>
+    </div>
+  </span>
 
   <div>
     <a-scene>
@@ -77,11 +77,9 @@
         <a-box id="areabox6" position=" 18 -6 0" width="16" height="10" rotation="0 75 0"
           material="shader:html;target: #target6;" @click="handlerClick"></a-box>
 
-        <a-box position="-2 0 5" rotation="0 45 0" color="#4CC3D9" @click="getdog"></a-box>
+        <!-- <a-box position="-2 0 5" rotation="0 45 0" color="#4CC3D9" @click="getdog"></a-box> -->
         <a-plane position=" 18 -6 0" width="16" height="10" @click="getdog"></a-plane>
-        <a-sky
-          src="https://images.unsplash.com/photo-1557971370-e7298ee473fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80"
-          rotation="0 45 0"></a-sky>
+        <a-sky src="" rotation="0 45 0"></a-sky>
       </a-entity>
 
       <a-entity camera wasd-controls look-controls position="-8 0 8"></a-entity>
