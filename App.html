@@ -13,52 +13,46 @@
 </head>
 
 <body>
-  <span class="blinking">
-    <div id="loader">
+  <div id="loader">
 
-      <p>loading...</p>
+    <p>loading...</p>
+  </div>
+  <div id="target1" class="target">
+    <div class="cf">
+
     </div>
-    <div id="target1" class="target">
-      <img src="imgs/face.png" alt="A-Frame">
-      <div class="cf">
-        <h3>警告</h3>
-      </div>
-      <p class="detail">警告</p>
+    <p class="detail">警告</p>
+  </div>
+  <div id="target2" class="target">
+    <img v-if="url" v-bind:src="url" alt="A-Frame">
+    <div class="cf">
     </div>
-    <div id="target2" class="target">
-      <img v-if="url" v-bind:src="url" alt="A-Frame">
-      <div class="cf">
-      </div>
-      <p class="detail">緊急事態宣言発令中</p>
+    <p class="detail">緊急事態宣言発令中</p>
+  </div>
+  <div id="target3" class="target">
+    <img src="imgs/gotop.png" alt="A-Frame">
+    <div class="cf">
     </div>
-    <div id="target3" class="target">
-      <img src="imgs/gotop.png" alt="A-Frame">
-      <div class="cf">
-        <h3>TOPへ</h3>
-      </div>
-      <p class="detail">緊急事態宣言発令中 </p>
+    <p class="detail">緊急事態宣言発令中 </p>
+  </div>
+  <div id="target4" class="target">
+    <img src="imgs/orc.png" alt="A-Frame">
+    <div class="cf">
     </div>
-    <div id="target4" class="target">
-      <img src="imgs/orc.png" alt="A-Frame">
-      <div class="cf">
-        <h3>OCR分析</h3>
-      </div>
-      <p class="detail">ソーシャルディスタンスを保ってください。</p>
+    <p class="detail">ソーシャルディスタンスを保ってください。</p>
+  </div>
+  <div id="target5" class="target">
+    <img src="imgs/dog.jpg" alt="A-Frame">
+    <div class="cf">
     </div>
-    <div id="target5" class="target">
-      <img src="imgs/dog.jpg" alt="A-Frame">
-      <div class="cf">
-        <h3>犬画像ページ</h3>
-      </div>
-      <p class="detail">３密ぅ～～！！！</p>
+    <p class="detail">３密ぅ～～！！！</p>
+  </div>
+  <div id="target6" class="target">
+    <img src="imgs/jaga.png" alt="A-Frame">
+    <div class="cf">
     </div>
-    <div id="target6" class="target">
-      <img src="imgs/jaga.png" alt="A-Frame">
-      <div class="cf">
-        <h3>予備</h3>
-      </div>
-      <p class="detail">ソーシャルディスタンスを保ってください。</p>
-    </div>
+    <p class="detail">ソーシャルディスタンスを保ってください。</p>
+  </div>
   </span>
 
   <div>
@@ -97,61 +91,6 @@
   <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <script>
-    // vue.jsの記載
-
-    const app = new Vue({
-      el: '#aframeApp',
-      data: {
-        url: "imgs/logo.png"
-      },
-      methods: {
-        getdog: async function () {
-            const URL = 'https://dog.ceo/api/breeds/image/random';
-            const response = await axios.get(URL);
-
-            this.message = response.data;
-            this.url = response.data.message;
-
-            console.log(this.url);
-          }
-
-
-
-          ,
-        handlerClick: function (event) {
-          console.log('handlerClick');
-          console.log(event.target.id);
-          const boxid = event.target.id;
-
-          if (boxid == 'areabox1') {
-            location.href = 'https://simasima.work/contents/face-emotion.html';
-          } else if (boxid == 'areabox4') {
-            this.skyboxSrc = 'https://simasima.work/contents/ocr-read.html';
-          } else if (boxid == 'areabox3') {
-            this.skyboxSrc = 'https://simasima.work/contents/dog.html';
-          } else if (boxid == 'areabox5') {
-            this.skyboxSrc = 'https://simasima.work/';
-          }
-
-
-        },
-        handlerMouseEnter: function (event) {
-          console.log('handlerMouseEnter');
-          console.log(event);
-          event.target.setAttribute('color', 'blue');
-        },
-        handlerMouseLeave: function (event) {
-          console.log('handlerMouseLeave');
-          console.log(event);
-          event.target.setAttribute('color', 'red');
-        }
-      },
-      mounted() {
-        console.log('mounted');
-      }
-    })
-  </script>
 
 </body>
 
