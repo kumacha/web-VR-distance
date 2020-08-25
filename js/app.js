@@ -1,10 +1,10 @@
 let obniz = new Obniz("obniz_id");
 let connected = false;
 
-let audio1 = new Audio("audio/a.mp3");
-let audio2 = new Audio("audio/b.mp3");
-let audio3 = new Audio("audio/c.mp3");
-let audio4 = new Audio("audio/d.mp3");
+let audio1 = new Audio("audio/otukaresu.mp3");
+let audio2 = new Audio("audio/sanmitu.mp3");
+let audio3 = new Audio("audio/social.mp3");
+let audio4 = new Audio("audio/sugoine.mp3");
 let audio5 = new Audio("audio/test.mp3");
 
 obniz.onconnect = async function () {
