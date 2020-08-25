@@ -27,26 +27,19 @@
 }
 
 .target {
-  position: fixed;
+  position: absolute;
   width: 1600px;
   height: 1000px;
   font-size: 600%;
   background-color: rgba(0, 0, 0, 1);
   display: hidden;
-  flex-direction: column;
-  justify-content: center;
   padding: 17px 17px 17px 17px;
   border-style: solid;
   border-width: 50px;
   border-color: rgba(255, 0, 0, 1);
   border-radius: 17px 17px 17px 17px;
-}
-
-#error h2 {
-  font-size: 34px;
-}
-#error p {
-  font-size: 17px;
+  animation: flicker 0.85s linear 0s infinite alternate none running;
+  /*z-index: 1;*/
 }
 
 .target > img {
@@ -58,15 +51,18 @@
 
 .target > div {
   margin-left: 36%;
-  width: 52%;
+  /* width: 52%; */
   padding: 4%;
 }
 
 .target > .detail {
   padding: 3% 0;
   text-align: center;
-  width: 92%;
+  width: 100%;
   color: #fff;
   background-color: rgba(1, 1, 1, 0.6);
-  margin: 4%;
+  margin: 3%;
+  /* font-family: "Kosugi Maru", sans-serif; */
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 140%;
 }
