@@ -1,65 +1,72 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #loader {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 100000000000;
-    background-color: #333;
-    color: #fff;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100000000000;
+  background-color: #333;
+  color: #fff;
 }
 
-#loader>p {
-    position: absolute;
-    top: 50%;
-    margin-top: -0.5em;
-    width: 100%;
-    text-align: center;
-    font-size: 200%;
-    font-weight: bold;
+#loader > p {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  width: 100%;
+  text-align: center;
+  font-size: 200%;
+  font-weight: bold;
 }
 
 #loader.hidden {
-    display: none;
+  display: none;
 }
 
 .target {
-    position: absolute;
-    width: 1600px;
-    height: 1000px;
-    font-size: 600%;
-    background-color: rgba(0, 0, 0, 1.0);
-    display: hidden;
-    padding: 17px 17px 17px 17px;
-    border-style: solid;
-    border-width: 50px;
-    border-color: rgba(255, 0, 0, 1.0);
-    border-radius: 17px 17px 17px 17px;
-    animation: flicker 0.85s linear 0s infinite alternate none running;
-    /*z-index: 1;*/
+  position: fixed;
+  width: 1600px;
+  height: 1000px;
+  font-size: 600%;
+  background-color: rgba(0, 0, 0, 1);
+  display: hidden;
+  flex-direction: column;
+  justify-content: center;
+  padding: 17px 17px 17px 17px;
+  border-style: solid;
+  border-width: 50px;
+  border-color: rgba(255, 0, 0, 1);
+  border-radius: 17px 17px 17px 17px;
 }
 
-.target>img {
-    float: left;
-    display: block;
-    width: 32%;
-    padding: 4% 0 4% 4%;
+#error h2 {
+  font-size: 34px;
+}
+#error p {
+  font-size: 17px;
 }
 
-.target>div {
-    margin-left: 36%;
-    width: 52%;
-    padding: 4%;
+.target > img {
+  float: left;
+  display: block;
+  width: 32%;
+  padding: 4% 0 4% 4%;
 }
 
-.target>.detail {
-    padding: 3% 0;
-    text-align: center;
-    width: 92%;
-    color: #fff;
-    background-color: rgba(1, 1, 1, 0.6);
-    margin: 4%;
+.target > div {
+  margin-left: 36%;
+  width: 52%;
+  padding: 4%;
+}
+
+.target > .detail {
+  padding: 3% 0;
+  text-align: center;
+  width: 92%;
+  color: #fff;
+  background-color: rgba(1, 1, 1, 0.6);
+  margin: 4%;
 }

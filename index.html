@@ -1,164 +1,137 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <title>Hello!!!!</title>
-    <meta name="description" content="Hello, WebVR! • A-Frame" />
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
-    <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
-    <script src="./js/html2canvas.min.js"></script>
+<head>
+  <title>Hello!!!!</title>
+  <meta name="description" content="Hello, WebVR! • A-Frame" />
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+  <script src="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"></script>
+  <script src="./js/html2canvas.min.js"></script>
 
-  <body>
-    <span class="blinking">
-      <div id="loader">
-        <p>loading...</p>
-      </div>
-      <div id="target1" class="target" onclick="handlerClick(event)">
-        <img src="imgs/face.png" alt="A-Frame" />
-        <div class="cf">
-          <h3>警告</h3>
-        </div>
-        <p class="detail">警告</p>
-      </div>
-      <div id="target2" class="target">
-        <img v-if="url" v-bind:src="url" alt="A-Frame" />
-        <div class="cf"></div>
-        <p class="detail">緊急事態宣言発令中</p>
-      </div>
-      <div id="target3" class="target">
-        <img src="imgs/gotop.png" alt="A-Frame" />
-        <div class="cf">
-          <h3>TOPへ</h3>
-        </div>
-        <p class="detail">緊急事態宣言発令中</p>
-      </div>
-      <div id="target4" class="target">
-        <img src="imgs/orc.png" alt="A-Frame" />
-        <div class="cf">
-          <h3>OCR分析</h3>
-        </div>
-        <p class="detail">ソーシャルディスタンスを保ってください。</p>
-      </div>
-      <div id="target5" class="target">
-        <img src="imgs/dog.jpg" alt="A-Frame" />
-        <div class="cf">
-          <h3>犬画像ページ</h3>
-        </div>
-        <p class="detail">３密ぅ～～！！！</p>
-      </div>
-      <div id="target6" class="target">
-        <img src="imgs/jaga.png" alt="A-Frame" />
-        <div class="cf">
-          <h3>予備</h3>
-        </div>
-        <p class="detail">ソーシャルディスタンスを保ってください。</p>
-      </div>
-    </span>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-    <div>
-      <a-scene>
-        <a-entity id="aframeApp">
-          <a-box
-            id="areabox1"
-            position="-10  6 -15"
-            width="16"
-            height="10"
-            rotation="0 30 0"
-            material="shader:html;target: #target1;"
-            @click="handlerClick"
-          ></a-box>
-          <a-box
-            id="areabox2"
-            position=" 0  6 30"
-            width="16"
-            height="10"
-            rotation="0 15 0"
-            material="shader:html;target: #target2;"
-          ></a-box>
-          <a-box
-            id="areabox3"
-            position=" 18  6 0"
-            width="16"
-            height="10"
-            rotation="0 75 0"
-            material="shader:html;target: #target3;"
-            @click="handlerClick"
-          ></a-box>
-          <a-box
-            id="areabox4"
-            position="-10 -6 -15"
-            width="16"
-            height="10"
-            rotation="0 30 0"
-            material="shader:html;target: #target4;"
-            @click="handlerClick"
-          ></a-box>
-          <a-box
-            id="areabox5"
-            position=" 0 -6 30"
-            width="16"
-            height="10"
-            rotation="0 15 0"
-            material="shader:html;target: #target5;"
-            @click="handlerClick"
-          ></a-box>
-          <a-box
-            id="areabox6"
-            position=" 18 -6 0"
-            width="16"
-            height="10"
-            rotation="0 75 0"
-            material="shader:html;target: #target6;"
-            @click="handlerClick"
-          ></a-box>
+<body>
 
-          <!-- <a-box position="-2 0 5" rotation="0 45 0" color="#4CC3D9" @click="getdog"></a-box> -->
-          <a-plane
-            position=" 18 -6 0"
-            width="16"
-            height="10"
-            @click="getdog"
-          ></a-plane>
-          <a-sky src="360.jpg" rotation="0 45 0"></a-sky>
-        </a-entity>
-
-        <a-entity
-          camera
-          wasd-controls
-          look-controls
-          position="-8 0 8"
-        ></a-entity>
-
-        <a-entity>
-          <a-camera>
-            <a-cursor></a-cursor>
-          </a-camera>
-        </a-entity>
-      </a-scene>
+  <!-- <div id="loader">
+    <p>loading...</p>
+  </div> -->
+  <div id="target1" class="target" onclick="handlerClick(event)">
+    <img src="imgs/face.png" alt="A-Frame" />
+    <div class="cf">
     </div>
+    <p class="detail">警告!</p>
+  </div>
+  <div id="target2" class="target">
+    <img v-if="url" v-bind:src="url" alt="A-Frame" />
+    <div class="cf"></div>
+    <p class="detail">緊急事態宣言発令中</p>
+  </div>
+  <div id="target3" class="target">
+    <img src="imgs/gotop.png" alt="A-Frame" />
+    <div class="cf">
+    </div>
+    <p class="detail">緊急事態宣言発令中</p>
+  </div>
+  <div id="target4" class="target">
+    <img src="imgs/orc.png" alt="A-Frame" />
+    <div class="cf">
+    </div>
+    <p class="detail">ソーシャルディスタンスを保ってください。</p>
+  </div>
+  <div id="target5" class="target">
+    <img src="imgs/dog.jpg" alt="A-Frame" />
+    <div class="cf">
 
-    <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script
-      src="https://unpkg.com/obniz@3.5.0/obniz.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./js/app.js"></script>
-  </body>
+    </div>
+    <p class="detail">３密ぅ～～！！！</p>
+  </div>
+  <div id="target6" class="target">
+    <img src="imgs/jaga.png" alt="A-Frame" />
+    <div class="cf">
+    </div>
+    <p class="detail">ソーシャルディスタンスを保ってください。</p>
+  </div>
+  </span>
 
-  <script>
-    var scene = document.querySelector("a-scene");
-    var run = function () {
-      document.getElementById("loader").classList.add("hidden");
-    };
+  <div>
+    <a-scene>
+      <a-entity id="aframeApp">
+        <a-box id="areabox1" position="-2  6 -15" width="16" height="10" rotation="0 30 0"
+          material="shader:html;target: #target1; transparent: true" animation="property: components.material.material.opacity;
+          from: 0;
+          to: 1;
+          dir: alternate;
+          dur: 1000;
+          loop: true" @click="handlerClick"></a-box> -->
+        <a-box id="areabox2" position=" 0  6 30" width="16" height="10" rotation="0 15 0"
+          material="shader:html;target: #target2; " animation="property: object3D.position.y;
+          to: 5.0;
+          dir: alternate;
+          dur: 1000;
+          loop: true"></a-box>
+        <a-box id="areabox3" position=" 18  6 0" width="16" height="10" rotation="0 75 0"
+          material="shader:html;target: #target3;" animation="property: object3D.position.y;
+          to: 5.0;
+          dir: alternate;
+          dur: 1000;
+          loop: true" @click="handlerClick"></a-box>
+        <a-box id="areabox4" position="-2 -6 -15" width="16" height="10" rotation="0 30 0"
+          material="shader:html;target: #target4; transparent: true" animation="property: components.material.material.opacity;
+          from: 0;
+          to: 1;
+          dir: alternate;
+          dur: 1000;
+          loop: true" @click="handlerClick"></a-box>
+        <a-box id="areabox5" position=" 0 -6 30" width="16" height="10" rotation="0 15 0"
+          material="shader:html;target: #target5;" animation="property: scale;
+          dur: 2000;
+          to: 5.0 5.0 5.0;
+          dir: alternate;
+          loop: true" @click="handlerClick"></a-box>
+        <a-box id="areabox6" position=" 18 -6 0" width="16" height="10" rotation="0 75 0"
+          material="shader:html;target: #target6;" animation="property: object3D.position.y;
+          to: -5.0;
+          dir: alternate;
+          dur: 1000;
+          loop: true" @click="handlerClick"></a-box>
 
-    if (scene.hasLoaded) {
-      run();
-    } else {
-      scene.addEventListener("loaded", run);
-    }
-  </script>
+        <!-- <a-box position="-2 0 5" rotation="0 45 0" color="#4CC3D9" @click="getdog"></a-box> -->
+        <a-plane position=" 18 -6 0" width="16" height="10" @click="getdog"></a-plane>
+        <a-sky src="360.jpg" rotation="0 45 0"></a-sky>
+
+      </a-entity>
+
+
+      <a-entity camera wasd-controls look-controls position="-8 0 8"></a-entity>
+
+      <a-entity>
+
+        <a-camera>
+          <a-cursor></a-cursor>
+        </a-camera>
+      </a-entity>
+    </a-scene>
+  </div>
+
+  <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/obniz@3.5.0/obniz.js" crossorigin="anonymous"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+<script>
+  var scene = document.querySelector("a-scene");
+  var run = function () {
+    document.getElementById("loader").classList.add("hidden");
+  };
+
+  if (scene.hasLoaded) {
+    run();
+  } else {
+    scene.addEventListener("loaded", run);
+  }
+</script>
+
 </html>
